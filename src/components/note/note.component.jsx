@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import { useDispatch } from 'react-redux'
+import Modal from '../modal/modal.component'
 
 import { toggleFav, deleteNote } from '../../redux/actions/note.action'
 
 const Note = ({ note }) => {
+
+    const [show, setShow] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -21,7 +24,16 @@ const Note = ({ note }) => {
         dispatch({type: 'EDIT_NOTE', payload: note})
     }
 
-    const heartMarkup = note.favorite? 'favorite' : 'favorite_border';
+    const showModal = () => {
+        setShow(true)
+    }
+      
+    const hideModal = () => {
+        setShow(false)
+    }
+
+    const heartMarkup = note.favorite? 'favorite' : 'favorite_border'
+    
     return (
         <div className="card">
             <div className="card-content">
@@ -43,10 +55,14 @@ const Note = ({ note }) => {
                         <Link to={`/edit/${note.id}`}>
                             <i className="material-icons black-text" onClick={editNoteHandler}>edit</i>
                         </Link> 
-                        <i className="material-icons" style={{ cursor: 'pointer'}} onClick={deleteNoteHandler} >delete</i>
+                        <i className="material-icons" style={{ cursor: 'pointer'}} onClick={showModal} >delete</i>
                     </div>
                 </div>
             </div>
+            <Modal show={show} handleClose={hideModal} handleDelete={deleteNoteHandler}>
+                <h4>Eliminar Nota</h4>
+                <p className="modal-message">Esta seguro que desea eliminar la nota {note.title}?</p>
+            </Modal>
         </div>
     )
 }
