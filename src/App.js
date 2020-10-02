@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, HashRouter } from 'react-router-dom'
 
 import Navbar from './layout/navbar'
 import HomePage from './pages/home/home.component'
@@ -10,13 +10,13 @@ import Favorites from './components/favorites/favorites.component'
 function App() {
   return (    
     <Router>
-      <Navbar />
-      <Switch>        
+      <HashRouter>        
+        <Navbar />        
         <Route exact path='/' component={HomePage} />        
         <Route path='/edit/:id' component={NoteEdit} />        
         <Route path='/note/:id' component={NoteDetail} />  
         <Route path='/favorites' component={Favorites} />
-      </Switch>
+      </HashRouter>
     </Router>
   );
 }
