@@ -1,14 +1,22 @@
 import React from 'react'
 import moment from 'moment'
+import { useDispatch } from 'react-redux'
+import { toggleFav } from '../../redux/actions/note.action'
 
 const Note = ({ note }) => {
+
+    const dispatch = useDispatch()
+
+    const toogleFavoriteHandler = () => {
+        dispatch(toggleFav(note))
+    }
 
     const heartMarkup = note.favorite? 'favorite' : 'favorite_border';
     return (
         <div className="card">
             <div className="card-content">
                 <div className="right-align">
-                <i className="material-icons red-text" style={{ cursor: 'pointer'}}>{heartMarkup}</i>
+                <i className="material-icons red-text" style={{ cursor: 'pointer'}} onClick={toogleFavoriteHandler}>{heartMarkup}</i>
                 </div>
                 <span className="card-title activator grey-text text-darken-4">{note.title}</span>
                 <p>{note.content}</p>

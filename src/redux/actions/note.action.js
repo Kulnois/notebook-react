@@ -12,3 +12,15 @@ export const addNote = (note) => {
             .catch(err => console.log(err))
     }
 }
+
+export const toggleFav = (note) => {
+    return (dispatch, getState, {getFirestore}) => {
+        const favStatus = !note.favorite
+        const firestore = getFirestore()
+
+        firestore.collection('notes').doc(note.id)
+            .update({ favorite: favStatus })
+            .then(() => console.log('add the note favorite successfully'))
+            .catch(err => console.log(err))
+    }
+}
