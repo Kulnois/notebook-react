@@ -35,3 +35,14 @@ export const deleteNote = (note) => {
             .catch(err => console.log(err))
     }
 }
+
+export const updateNote = (note) => {
+    return (dispatch, getState, {getFirestore}) => {
+        const firestore = getFirestore()
+
+        firestore.collection('notes').doc(note.id)
+            .update({ title: note.title, content: note.content })
+            .then(() => console.log('update the note successfully'))
+            .catch(err => console.log(err))
+    }
+}

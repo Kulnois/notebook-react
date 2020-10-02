@@ -29,7 +29,7 @@ const AddNote = () => {
                         <textarea id="note_content" rows="4" required className="materialize-textarea" {...bindContent}></textarea>
                         <label htmlFor="note_content">Note Content</label>
                     </div>
-                    <button className="btn green">Add</button>
+                    <button className="btn green">Add<i class = "material-icons right">add</i></button>
                 </form>
             </div>
         </div>
