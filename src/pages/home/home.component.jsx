@@ -14,10 +14,10 @@ function HomePage() {
     return (
         <div className="container">
             <div className="row center-align">
-                <div className="col m7">
+                <div className="col s12 m12 l12 xl7">
                     <AddNote />
                 </div>
-                <div className="col m5">
+                <div className="col s12 m12 l12 xl5">
                     <NoteList notes={notes} />
                 </div>
             </div>

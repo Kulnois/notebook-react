@@ -1,11 +1,15 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 
 const Navbar = () => {
     return (
         <nav className="blue-grey darken-4">
             <div className="nav-wrapper">
-                <a href="#" className="brand-logo">Notebook</a>
+                <Link to="/" className="brand-logo">Notebook</Link>
+                <ul id="nav-mobile" className="right hide-on-med-and-down">
+                    <li><NavLink to="/favorites">Favorites</NavLink></li>
+                </ul>
             </div>
         </nav>
     )

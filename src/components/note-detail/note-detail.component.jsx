@@ -9,7 +9,7 @@ function NoteDetail ({ match }) {
     const note = useSelector(({firestore:{data}}) => data.notes&&data.notes[id])
     const noteMarkup = !isLoaded(note)?(
         <div className="container section">
-            <div className="card z-depth-0">
+            <div className="card detail z-depth-0">
                 <div className="card-content">
                     <span className="card-title">Loading...</span>
                 </div>
@@ -19,7 +19,7 @@ function NoteDetail ({ match }) {
         </div>
     ) : isEmpty(note)?(
         <div className="container section">
-            <div className="card z-depth-0">
+            <div className="card detail z-depth-0">
                 <div className="card-content">
                     <span className="card-title">The note content is empty</span>
                 </div>
@@ -29,7 +29,7 @@ function NoteDetail ({ match }) {
         </div>
     ) : (
         <div className="container section">
-            <div className="card z-depth-0">
+            <div className="card detail z-depth-0">
                 <div className="card-content">
                     <span className="card-title">{note.title}</span>
                     <p>{note.content}</p>

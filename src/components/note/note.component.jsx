@@ -35,7 +35,7 @@ const Note = ({ note }) => {
                 <p>{note.content}</p>
             </div>
             <div className="card-action">
-                <div className="row">
+                <div className="row action">
                     <div className="col s4 left-align">
                         <span className="gey-text">{moment(note.createdAt.toDate()).fromNow()}</span>
                     </div>
