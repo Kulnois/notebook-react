@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/notebook-react/static/css/main.86630ecb.chunk.css",
+    "main.js": "/notebook-react/static/js/main.e92aec79.chunk.js",
+    "main.js.map": "/notebook-react/static/js/main.e92aec79.chunk.js.map",
+    "runtime-main.js": "/notebook-react/static/js/runtime-main.e1ed781c.js",
+    "runtime-main.js.map": "/notebook-react/static/js/runtime-main.e1ed781c.js.map",
+    "static/js/2.fafcd3f5.chunk.js": "/notebook-react/static/js/2.fafcd3f5.chunk.js",
+    "static/js/2.fafcd3f5.chunk.js.map": "/notebook-react/static/js/2.fafcd3f5.chunk.js.map",
+    "index.html": "/notebook-react/index.html",
+    "precache-manifest.5be5a35db37c621f28b6b91dbb8307f1.js": "/notebook-react/precache-manifest.5be5a35db37c621f28b6b91dbb8307f1.js",
+    "service-worker.js": "/notebook-react/service-worker.js",
+    "static/css/main.86630ecb.chunk.css.map": "/notebook-react/static/css/main.86630ecb.chunk.css.map",
+    "static/js/2.fafcd3f5.chunk.js.LICENSE.txt": "/notebook-react/static/js/2.fafcd3f5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e1ed781c.js",
+    "static/js/2.fafcd3f5.chunk.js",
+    "static/css/main.86630ecb.chunk.css",
+    "static/js/main.e92aec79.chunk.js"
+  ]
+}
