@@ -28,7 +28,10 @@ const Note = ({ note }) => {
                 <div className="right-align">
                     <i className="material-icons red-text" style={{ cursor: 'pointer'}} onClick={toogleFavoriteHandler}>{heartMarkup}</i>
                 </div>
-                <span className="card-title activator grey-text text-darken-4">{note.title}</span>
+                
+                <Link to={`/note/${note.id}`} >
+                    <h5 className="black-text">{note.title}</h5>
+                </Link>
                 <p>{note.content}</p>
             </div>
             <div className="card-action">
