@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import { useDispatch } from 'react-redux'
-import { toggleFav } from '../../redux/actions/note.action'
+import { toggleFav, deleteNote } from '../../redux/actions/note.action'
 
 const Note = ({ note }) => {
 
@@ -9,6 +9,10 @@ const Note = ({ note }) => {
 
     const toogleFavoriteHandler = () => {
         dispatch(toggleFav(note))
+    }
+
+    const deleteNoteHandler = () => {
+        dispatch(deleteNote(note))
     }
 
     const heartMarkup = note.favorite? 'favorite' : 'favorite_border';
@@ -28,7 +32,7 @@ const Note = ({ note }) => {
                     </div>
                     <div className="col s8 right-align">
                         <i className="material-icons black-text" >edit</i>
-                        <i className="material-icons" style={{ cursor: 'pointer'}} >delete</i>
+                        <i className="material-icons" style={{ cursor: 'pointer'}} onClick={deleteNoteHandler} >delete</i>
                     </div>
                 </div>
             </div>
